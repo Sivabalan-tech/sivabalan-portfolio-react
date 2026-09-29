@@ -23,7 +23,6 @@ export default function About() {
         <p className="section-label">01 / A little context</p>
         <div className="about-photo">
           <Image src="/assets/sivabalan.png" alt="Portrait of Sivabalan" width={360} height={460} sizes="180px" />
-          <span>SIVABALAN · DEVELOPER</span>
         </div>
       </div>
       <div>

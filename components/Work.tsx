@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -11,7 +12,8 @@ const projects = [
     description: "Intelligent healthcare assistant using RAG, wellness forecasting, and vision analysis for contextual health guidance.",
     link: "https://github.com/Sivabalan-tech/NeuraPulse",
     chips: ["Python", "Gemini API", "FAISS", "NLP"],
-    artClass: "health-art",
+    image: "/assets/neurapulse-dashboard.png",
+    imageAlt: "Healthcare dashboard with ECG, vital signs, scan imagery, and wellness charts",
   },
   {
     id: "02",
@@ -20,7 +22,8 @@ const projects = [
     description: "Turns study materials into personalized quizzes, coding tasks, and communication practice, with AI feedback, progress tracking, and teacher analytics.",
     link: "https://github.com/Sivabalan-tech/SRM-Study-Buddy",
     chips: ["FastAPI", "JavaScript", "Tailwind", "SQL"],
-    artClass: "study-art",
+    image: "/assets/study-buddy-dashboard.png",
+    imageAlt: "Study platform dashboard with a code editor, quiz progress, and learning analytics",
   },
   {
     id: "03",
@@ -29,7 +32,8 @@ const projects = [
     description: "A dynamic business site designed for clear brand communication and an engaging customer experience.",
     link: "https://github.com/Sivabalan-tech/SSM-Interiors",
     chips: ["HTML", "CSS", "JavaScript"],
-    artClass: "interior-art",
+    image: "/assets/ssm-interiors-living-room.png",
+    imageAlt: "Contemporary living room interior with natural wood, stone, and tailored furniture",
   },
 ];
 
@@ -38,8 +42,8 @@ export default function Work() {
     <section id="work" className="work section">
       <div className="wrap">
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.35 }} transition={{ duration: 0.6 }}>
-          <p className="section-label">03 / Selected work</p>
-          <h2>Ideas, engineered.</h2>
+          <p className="section-label">03 / Projects</p>
+          <h2>Projects.</h2>
         </motion.div>
         <div className="project-grid">
           {projects.map((project, index) => (
@@ -63,10 +67,8 @@ export default function Work() {
                 </a>
                 <div className="chips">{project.chips.map((chip) => <span key={chip}>{chip}</span>)}</div>
               </div>
-              <div className={`project-art ${project.artClass}`} aria-hidden="true">
-                {project.artClass === "health-art" && <><div className="pulse" /><div className="scan" /></>}
-                {project.artClass === "study-art" && <><div className="code-lines"><i /><i /><i /><i /></div><div className="progress-ring">82%</div></>}
-                {project.artClass === "interior-art" && <><div /><i /><b /></>}
+              <div className="project-art">
+                <Image src={project.image} alt={project.imageAlt} fill sizes="(max-width: 680px) calc(100vw - 72px), (max-width: 900px) 175px, 230px" />
               </div>
             </motion.article>
           ))}

@@ -52,7 +52,7 @@ export default function Contact() {
             <label htmlFor="message">Your message</label>
             <textarea id="message" name="message" required placeholder="Tell me a little about your project..." value={formData.message} onChange={(event) => setFormData({ ...formData, message: event.target.value })} />
             <button type="submit">Send message <ArrowUpRight /></button>
-            <p className="form-note">This opens your email app with the message ready to send.</p>
+            <p className="form-note">Opens your email app with the message filled in. Press Send there to deliver it.</p>
           </motion.form>
         </div>
         <div className="footer-bottom">

@@ -8,7 +8,7 @@ export default function Header() {
 
   return (
     <header className="nav wrap">
-      <a className="brand" href="#top" aria-label="Sivabalan, home">SIVABALAN<span>.</span></a>
+      <a className="brand" href="#top" aria-label="Sivabalan S, home">SIVABALAN S</a>
       <button className="menu" aria-label={isOpen ? "Close navigation" : "Open navigation"} aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <X size={16} /> : <Menu size={16} />}
       </button>
